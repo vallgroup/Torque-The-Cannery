@@ -1,7 +1,13 @@
 @import 'partials/variables';
 
+@import 'resets';
+
 @import 'grid';
 
 @import 'typography/typography';
 
-@import 'parts/shared/header-templates/header-style-1';
+@import 'parts/shared/header-templates/header';
+
+@import 'parts/acf/fullpage-sections';
+
+@import 'parts/acf/modules/modules';

@@ -1,0 +1,134 @@
+$gray-border: 0.2em solid $gray;
+
+.section {
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: block;
+	box-sizing: border-box;
+	height: 100vh;
+	width: 100%;
+
+	padding: 8em 7.8em;
+
+	&-inner {
+		position: relative;
+		display: block;
+		box-sizing: border-box;
+		height: 100%;
+		width: 100%;
+		border: $gray-border;
+		overflow: hidden;
+	}
+
+	&-sidebar {
+		// position: relative;
+		display: block;
+		box-sizing: border-box;
+		height: 100%;
+		width: 40%;
+		border-right: $gray-border;
+		padding: 5em;
+		float: left;
+	}
+
+	&-content {
+		display: block;
+		box-sizing: border-box;
+		height: 100%;
+		width: 60%;
+		padding: 0;
+		overflow: auto;
+	}
+}
+
+.section-sidebar-logo {
+	margin-bottom: 3em;
+	text-align: center;
+
+	img {
+		max-width: 40em !important;
+	}
+}
+
+$contentMaxHeight: 32.5em;
+$ctaHeight: 4em;
+
+.section-sidebar-content {
+	position: relative;
+	display: block;
+	box-sizing: border-box;
+	border-top: $gray-border;
+	// padding-left: 5.3em;
+	height: $contentMaxHeight;
+
+	&-title {
+		position: relative;
+		display: block;
+		box-sizing: border-box;
+		float: left;
+		width: 5em;
+		padding: 2em 1em 1em;
+		border-right: $gray-border;
+		height: 100%;
+		overflow: hidden;
+
+		&-vertical {
+			white-space: nowrap;
+			position: relative;
+			top: $contentMaxHeight;
+			left: 0;
+			transform: rotate(-90deg);
+			width: $contentMaxHeight;
+			transform-origin: left top;
+			text-align: right;
+
+			h2 {
+				font-size: 2.2em;
+			}
+		}
+	}
+
+	&-wysiwyg {
+		position: relative;
+		display: block;
+		box-sizing: border-box;
+		overflow: auto;
+		height: ($contentMaxHeight - $ctaHeight);
+		border-bottom: $gray-border;
+		padding: 3em 2em;
+	}
+
+	&-cta {
+		float: left;
+		position: relative;
+		display: block;
+		box-sizing: border-box;
+		height: $ctaHeight;
+		padding: 1em 2em 2em 3em;
+	}
+}
+
+.section-content {
+	&-inner {
+
+	}
+
+	&-navigation {
+		display: block;
+		box-sizing: border-box;
+		text-align: center;
+		padding: 2em;
+		border-bottom: $gray-border;
+
+		.torque-menu {
+			&-item-wrapper {
+				margin: 0 3.5em;
+
+				a {
+					font-size: 2em;
+				}
+			}
+		}
+	}
+}

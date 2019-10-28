@@ -39,7 +39,6 @@ if ( class_exists( 'The_Cannery_Customizer' ) ) {
 
 
 
-
 /**
  * Admin settings
  */

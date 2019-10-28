@@ -5,8 +5,8 @@ require_once( get_template_directory() . '/includes/acf/torque-acf-search-class.
 class The_Cannery_ACF {
 
   public function __construct() {
-    add_action('admin_init', array( $this, 'acf_admin_init'), 99);
-    add_action('acf/init', array( $this, 'acf_init' ) );
+    // add_action('admin_init', array( $this, 'acf_admin_init'), 99);
+    // add_action('acf/init', array( $this, 'acf_init' ) );
 
     // hide acf in admin - client doesnt need to see this
     // add_filter('acf/settings/show_admin', '__return_false');
@@ -29,6 +29,7 @@ class The_Cannery_ACF {
 
   public function acf_init() {
     // add content sections here
+
   }
 }
 

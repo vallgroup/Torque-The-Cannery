@@ -2,19 +2,122 @@
 @import "../partials/variables";
 
 body {
+	font-size: 10px;
+	line-height: 1;
 }
 
 h1 {
+	font-family: Knockout-HTF32-JuniorCruiserwt;
+  font-size: 3.5em;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.14;
+  letter-spacing: 1.51px;
+  text-align: left;
+  color: $orange;
+  text-transform: uppercase;
+  margin-bottom: 2em;
 }
 
 h2 {
+	font-family: CourierNewPSMT;
+  font-size: 2.8em;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.14;
+  letter-spacing: 3.5px;
+  color: $gray;
+  text-transform: uppercase;
 }
 
 h3 {
+	font-family: CourierNewPSMT;
+  font-size: 2.4em;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.14;
+  letter-spacing: 3.5px;
+  color: $orange;
+  text-transform: uppercase;
 }
 
 h4 {
+	font-family: CourierNewPSMT;
+  font-size: 2.2em;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.14;
+  letter-spacing: 3.5px;
+  color: $gray;
+  text-transform: uppercase;
+}
+
+h5 {
+	font-family: CourierNewPSMT;
+  font-size: 2em;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.14;
+  letter-spacing: 3.5px;
+  color: $gray;
+  text-transform: uppercase;
+}
+
+p {
+	font-family: Montserrat;
+  font-size: 1.6em;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.63;
+  letter-spacing: normal;
+  text-align: left;
+  color: $black;
 }
 
 a {
+	font-size: inherit;
+	font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: 0.86px;
+	color: $orange;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+span {
+	font-size: inherit;
+	font-weight: inherit;
+  font-stretch: inherit;
+  font-style: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+	color: inherit;
+}
+
+i {
+	font-size: inherit;
+	font-weight: inherit;
+  font-stretch: inherit;
+  font-style: italic;
+  line-height: inherit;
+  letter-spacing: inherit;
+	color: inherit;
+}
+
+strong, b {
+	font-size: inherit;
+	font-weight: bold;
+  font-stretch: inherit;
+  font-style: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+	color: inherit;
 }
