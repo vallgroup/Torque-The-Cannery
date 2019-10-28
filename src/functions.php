@@ -37,7 +37,21 @@ if ( class_exists( 'The_Cannery_Customizer' ) ) {
    new The_Cannery_ACF();
  }
 
+add_filter( 'torque_map_api_key', function( $n ) {
+  return 'AIzaSyBtJClII3bXTZjSDnHoIrnawoQgqg9kx0Q';
+} );
 
+add_filter( 'torque_map_pois_allowed', function( $n ) {
+  return 4;
+} );
+
+add_filter( 'torque_map_pois_location', function( $n ) {
+  return 'bottom';
+} );
+
+add_filter( 'torque_map_display_pois_list', function( $n ) {
+  return true;
+} );
 
 /**
  * Admin settings
@@ -85,6 +99,12 @@ function torque_enqueue_child_styles() {
         array( $parent_style, $parent_main_style ),
         wp_get_theme()->get('Version')
     );
+
+    wp_enqueue_style( 'the-cannery-gf',
+        'https://fonts.googleapis.com/css?family=Montserrat:400,700|xCutive+Mono|Syncopate|Roboto&display=swap'
+    );
+
+
 }
 
 // enqueue child scripts after parent script
