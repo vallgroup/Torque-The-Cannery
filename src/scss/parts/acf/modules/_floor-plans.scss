@@ -1,0 +1,29 @@
+// fix global styles
+.torque-slideshow-react-entry {
+
+	.tq-items-list { display: none; }
+
+	.tq-slideshow.template_cannery_floorplans {
+		// padding-top: 75%;
+		height: 0;
+	}
+}
+
+
+.tq-slideshow {
+
+	.post-slide {
+		padding: 7em 14em;
+	}
+
+	h1 {
+		margin-bottom: 0;
+	}
+}
+
+.slideshow {
+
+	&-rsf {
+
+	}
+}

@@ -37,6 +37,7 @@ if ( class_exists( 'The_Cannery_Customizer' ) ) {
    new The_Cannery_ACF();
  }
 
+// maps filters
 add_filter( 'torque_map_api_key', function( $n ) {
   return 'AIzaSyBtJClII3bXTZjSDnHoIrnawoQgqg9kx0Q';
 } );
@@ -50,6 +51,17 @@ add_filter( 'torque_map_pois_location', function( $n ) {
 } );
 
 add_filter( 'torque_map_display_pois_list', function( $n ) {
+  return true;
+} );
+
+// floorplans filters
+add_filter( 'torque_floor_plans_cpt_metaboxes', function( $arr ) {
+  unset( $arr['floor_number'] );
+  return $arr;
+} );
+
+// Slideshow filters
+add_filter( 'torque_slideshow_allow_post_slideshow', function( $n ) {
   return true;
 } );
 

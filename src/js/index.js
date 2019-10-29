@@ -1,11 +1,11 @@
 import "../scss/main.scss";
 
 window.onload = () => {
-// 	window.scrollTo({
-//   top: 0,
-//   left: 0,
-//   behavior: 'smooth'
-// });
+	window.scrollTo({
+	  top: 0,
+	  left: 0,
+	  behavior: 'smooth'
+	});
 	takeOverBrowserScroll()
 }
 
@@ -14,8 +14,6 @@ function takeOverBrowserScroll() {
 	const body = document.getElementsByTagName('body')[0]
 	const sections = document.getElementsByTagName('section')
 	const numberOfSections = sections.length || 0
-
-	// body.scrollTo(0,0)
 
 	const buffer = 60;
 
