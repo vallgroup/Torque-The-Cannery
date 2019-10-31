@@ -115,13 +115,23 @@ $ctaHeight: 4em;
 		display: block;
 		box-sizing: border-box;
 		height: $ctaHeight;
-		padding: 1em 2em 2em 3em;
+		font-size: 1.2em;
+		font-weight: 600;
+		padding: 1.2em 2em 2em 2em;
 	}
 }
 
 .section-content {
-	&-inner {
+	overflow: hidden;
 
+	.section-content-inner {
+
+	}
+
+	.section-module {
+		overflow-x: hidden;
+		overflow-y: auto;
+		height: calc(100% - #{$navBarHeight});
 	}
 
 	&-navigation {
