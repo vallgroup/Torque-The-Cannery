@@ -24,6 +24,12 @@ if ( have_rows( $modules ) ):
 
       break;
 
+      case "gallery" :
+
+        include locate_template( $modules_path . 'gallery.php' );
+
+      break;
+
       case "contact" :
 
         include locate_template( $modules_path . 'contact.php' );
