@@ -1,0 +1,77 @@
+.contact-banner-container {
+    height: 40%;
+    margin: 10px 10px 25px 10px;
+
+    .contact-banner {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.contact-content-container {
+    margin: $paddingContentModules;
+
+    .contact-name-container {
+        padding: 0 10px 10px;
+        border-bottom: 0.2em solid $gray;
+    }
+
+    .contact-info-container {
+        padding: 20px 10px;
+        border-right: 0.2em solid $gray;
+        box-sizing: border-box;
+        width: 60%;
+        float: left;
+
+        .contact-info-item {
+            .contact-info-icon {
+                margin-right: 10px;
+            }
+            .contact-info-text {
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    .contact-logo-container {
+        padding: 20px 10px;
+        box-sizing: border-box;
+        width: 40%;
+        float: left;
+
+        .contact-logo {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .contact-address-container {
+        padding: 20px 10px;
+        border-right: 0.2em solid $gray;
+        box-sizing: border-box;
+        width: 60%;
+        float: left;
+
+        .contact-address-one {
+
+        }
+        .contact-address-two {
+            margin-left: 20px;
+        }
+    }
+
+    .contact-social-container {
+        padding: 20px 10px;
+        box-sizing: border-box;
+        width: 40%;
+        float: left;
+
+        .contact-social-icon {
+
+        }
+    }
+
+    /* &:nth-child(2) {
+        margin-top: 5px;
+    } */
+}
