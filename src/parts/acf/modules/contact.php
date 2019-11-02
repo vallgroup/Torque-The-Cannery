@@ -20,15 +20,15 @@ if ($top_img) {
     </div>';
 }
 
+// Name container
+$section_module .= '<div class="contact-name-container">';
+if ($name) {
+    $section_module .= '<h2 class="contact-name">' . $name . '</h2>';
+}
+$section_module .= '</div>';
+
 // Open content container
 $section_module .= '<div class="contact-content-container">';
-
-    // Name container
-    $section_module .= '<div class="contact-name-container">';
-    if ($name) {
-        $section_module .= '<h2 class="contact-name">' . $name . '</h2>';
-    }
-    $section_module .= '</div>';
 
     // Contact info container
     $section_module .= '<div class="contact-info-container">';
@@ -38,7 +38,7 @@ $section_module .= '<div class="contact-content-container">';
             $text = get_sub_field( 'text' );
             $link = get_sub_field( 'link' );
             $section_module .= '<div class="contact-info-item">';
-                $section_module .= $type . ' ' . $text . ' ' . $link;
+                $section_module .= '<img class="contact-info-icon icon-' . $type . '" src="/wp-content/themes/the-cannery/statics/images/' . $type . '-icon.png" alt="' . $type . '"/><a href="' . $link . '" class="contact-info-text">' . $text . '</a>';
             $section_module .= '</div>';
         endwhile;
     endif;
@@ -64,7 +64,7 @@ $section_module .= '<div class="contact-content-container">';
         $section_module .= '<span class="contact-address-one">' . $address_1 . '</span>';
     }
     if ($address_2) {
-        $section_module .= '<span class="contact-address-one">' . $address_2 . '</span>';
+        $section_module .= '<span class="contact-address-two">' . $address_2 . '</span>';
     }
     $section_module .= '</div>';
 
@@ -74,8 +74,8 @@ $section_module .= '<div class="contact-content-container">';
         while ( have_rows('social_icons') ): the_row();
             $icon = get_sub_field( 'icon' );
             $link = get_sub_field( 'link' );
-            $section_module .= '<a class="contact-info-item" href="' . $link . '">';
-                $section_module .= '<img src="' . $icon . '"/>';
+            $section_module .= '<a class="contact-social-icon" href="' . $link . '" target="_blank">';
+                $section_module .= '<img src="' . $icon . '" alt="' . $link . '"/>';
             $section_module .= '</a>';
         endwhile;
     endif;

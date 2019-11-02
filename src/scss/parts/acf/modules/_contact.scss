@@ -8,13 +8,19 @@
     }
 }
 
-.contact-content-container {
-    margin: $paddingContentModules;
+.contact-name-container {
+    // margin: $paddingContentModules;
+    display: inline-block;
+    width: calc((100% - #{$paddingContentModules}) - #{$paddingContentModules}); // account for both left & right margin
+    padding: 0 10px 5px;
+    margin: 5em 5em 0em;
+}
 
-    .contact-name-container {
-        padding: 0 10px 10px;
-        border-bottom: 0.2em solid $gray;
-    }
+.contact-content-container {
+    margin: 1em $paddingContentModules $paddingContentModules;
+    display: inline-block;
+    width: calc((100% - #{$paddingContentModules}) - #{$paddingContentModules}); // account for both left & right margin
+    border-top: 0.2em solid $gray;
 
     .contact-info-container {
         padding: 20px 10px;
@@ -24,11 +30,26 @@
         float: left;
 
         .contact-info-item {
+
+            &:not(:last-child) {
+                margin-bottom: 12px;
+            }
+
             .contact-info-icon {
                 margin-right: 10px;
+                width: 25px;
+                height: auto;
+                background-size: contain;
+                background-repeat: no-repeat;
+                display: inline-block;
             }
             .contact-info-text {
                 text-transform: uppercase;
+                color: $gray;
+                font-size: 20px;
+                line-height: 1.15;
+                letter-spacing: 2px;
+                text-align: left;
             }
         }
     }
@@ -38,10 +59,12 @@
         box-sizing: border-box;
         width: 40%;
         float: left;
+        text-align: center;
 
         .contact-logo {
             width: 100%;
             height: auto;
+            max-width: 240px;
         }
     }
 
@@ -52,11 +75,15 @@
         width: 60%;
         float: left;
 
-        .contact-address-one {
-
+        > * {
+            color: $orange;
+            font-size: 20px;
+            line-height: 1.2;
+            letter-spacing: 0.86px;
         }
+
         .contact-address-two {
-            margin-left: 20px;
+            margin-left: 40px;
         }
     }
 
@@ -65,13 +92,14 @@
         box-sizing: border-box;
         width: 40%;
         float: left;
+        text-align: center;
 
         .contact-social-icon {
-
+            width: 100%;
+            max-width: 30px;
+            height: auto;
+            padding: 5px 30px;
+            display: inline-block;
         }
     }
-
-    /* &:nth-child(2) {
-        margin-top: 5px;
-    } */
 }
