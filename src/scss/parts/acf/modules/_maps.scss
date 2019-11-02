@@ -57,7 +57,7 @@
     .torque-map-pois-list {
         order: 3;
         display: grid;
-        grid-template-columns: repeat(2, minmax(200px, 400px));
+        grid-template-columns: repeat(2, minmax(200px, 480px));
         // justify-content: space-evenly;
         grid-column-gap: 30px;
         padding: 0 $paddingContentModules;

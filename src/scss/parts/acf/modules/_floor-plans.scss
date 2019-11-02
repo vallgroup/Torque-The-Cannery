@@ -4,7 +4,7 @@
 	.tq-items-list { display: none; }
 
 	.tq-slideshow.template_cannery_floorplans {
-		padding-bottom: 99%;
+		padding-bottom: 56%;
 		box-sizing: border-box;
 		height: 0;
 	}
@@ -14,13 +14,17 @@
 .tq-slideshow {
 
 	.post-slide {
-		padding: 5em 8em;
+		padding: 5em 10em;
 
 		h1 {
 			margin-bottom: 10px;
 		}
 		.slideshow-rsf {
 			margin-bottom: 18px;
+			font-size: 1.2em;
+		}
+		> a {
+			font-size: 1.2em;
 		}
 
 		.slideshow-floor-plan {
