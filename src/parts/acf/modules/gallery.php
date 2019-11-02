@@ -7,109 +7,299 @@
 $title   = get_sub_field('title');
 $content = get_sub_field('content');
 $cta     = get_sub_field('call_to_action');
+$gallery_layout = get_sub_field('gallery_layout');
 $gallery_images = get_sub_field('gallery_images');
 
 $section_module = '';
 
-if ($gallery_images) {
+if ($gallery_images && $gallery_layout) {
     // Open gallery container
     $section_module .= '<div class="gallery-wrapper" >';
 
     // Define the grid sections, based on pre-defined designs provided by client
-    $grid_sections = array(
-        array(
-            'num_rows'        => '2',
-            'num_items'       => 3,
-            'items'           => array(
-                array(
-                    'column_start'  => '0',
-                    'column_end'    => '6',
-                    'row_start'     => '0',
-                    'row_end'       => '1',
-                ),
-                array(
-                    'column_start'  => '6',
-                    'column_end'    => '12',
-                    'row_start'     => '0',
-                    'row_end'       => '2',
-                ),
-                array(
-                    'column_start'  => '0',
-                    'column_end'    => '6',
-                    'row_start'     => '1',
-                    'row_end'       => '2',
-                ),
-            ),
-        ),
-        array(
-            'num_rows'        => '2',
-            'num_items'       => 3,
-            'items'           => array(
-                array(
-                    'column_start'  => '0',
-                    'column_end'    => '4',
-                    'row_start'     => '0',
-                    'row_end'       => '1',
-                ),
-                array(
-                    'column_start'  => '0',
-                    'column_end'    => '4',
-                    'row_start'     => '1',
-                    'row_end'       => '2',
-                ),
-                array(
-                    'column_start'  => '4',
-                    'column_end'    => '12',
-                    'row_start'     => '0',
-                    'row_end'       => '2',
+    if ($gallery_layout === 'layout_one') {
+        $grid_sections = array(
+            array(
+                'num_rows'        => '2',
+                'num_items'       => 3,
+                'items'           => array(
+                    array(
+                        'column_start'  => '0',
+                        'column_end'    => '6',
+                        'row_start'     => '0',
+                        'row_end'       => '1',
+                    ),
+                    array(
+                        'column_start'  => '6',
+                        'column_end'    => '12',
+                        'row_start'     => '0',
+                        'row_end'       => '2',
+                    ),
+                    array(
+                        'column_start'  => '0',
+                        'column_end'    => '6',
+                        'row_start'     => '1',
+                        'row_end'       => '2',
+                    ),
                 ),
             ),
-        ),
-        array(
-            'num_rows'        => '1',
-            'num_items'       => 2,
-            'items'           => array(
-                array(
-                    'column_start'  => '0',
-                    'column_end'    => '4',
-                    'row_start'     => '0',
-                    'row_end'       => '1',
-                ),
-                array(
-                    'column_start'  => '4',
-                    'column_end'    => '12',
-                    'row_start'     => '0',
-                    'row_end'       => '1',
-                ),
-            ),
-        ),
-        array(
-            'num_rows'        => '2',
-            'num_items'       => 3,
-            'items'           => array(
-                array(
-                    'column_start'  => '0',
-                    'column_end'    => '8',
-                    'row_start'     => '0',
-                    'row_end'       => '2',
-                ),
-                array(
-                    'column_start'  => '8',
-                    'column_end'    => '12',
-                    'row_start'     => '0',
-                    'row_end'       => '1',
-                ),
-                array(
-                    'column_start'  => '8',
-                    'column_end'    => '12',
-                    'row_start'     => '1',
-                    'row_end'       => '2',
+            array(
+                'num_rows'        => '2',
+                'num_items'       => 3,
+                'items'           => array(
+                    array(
+                        'column_start'  => '0',
+                        'column_end'    => '4',
+                        'row_start'     => '0',
+                        'row_end'       => '1',
+                    ),
+                    array(
+                        'column_start'  => '0',
+                        'column_end'    => '4',
+                        'row_start'     => '1',
+                        'row_end'       => '2',
+                    ),
+                    array(
+                        'column_start'  => '4',
+                        'column_end'    => '12',
+                        'row_start'     => '0',
+                        'row_end'       => '2',
+                    ),
                 ),
             ),
-        ),
-    );
+            array(
+                'num_rows'        => '1',
+                'num_items'       => 2,
+                'items'           => array(
+                    array(
+                        'column_start'  => '0',
+                        'column_end'    => '4',
+                        'row_start'     => '0',
+                        'row_end'       => '1',
+                    ),
+                    array(
+                        'column_start'  => '4',
+                        'column_end'    => '12',
+                        'row_start'     => '0',
+                        'row_end'       => '1',
+                    ),
+                ),
+            ),
+            array(
+                'num_rows'        => '2',
+                'num_items'       => 3,
+                'items'           => array(
+                    array(
+                        'column_start'  => '0',
+                        'column_end'    => '8',
+                        'row_start'     => '0',
+                        'row_end'       => '2',
+                    ),
+                    array(
+                        'column_start'  => '8',
+                        'column_end'    => '12',
+                        'row_start'     => '0',
+                        'row_end'       => '1',
+                    ),
+                    array(
+                        'column_start'  => '8',
+                        'column_end'    => '12',
+                        'row_start'     => '1',
+                        'row_end'       => '2',
+                    ),
+                ),
+            ),
+        );
+    } elseif ($gallery_layout === 'layout_two') {
+        $grid_sections = array(
+            array(
+                'num_rows'        => '2',
+                'num_items'       => 3,
+                'items'           => array(
+                    array(
+                        'column_start'  => '0',
+                        'column_end'    => '12',
+                        'row_start'     => '0',
+                        'row_end'       => '1',
+                    ),
+                    array(
+                        'column_start'  => '0',
+                        'column_end'    => '6',
+                        'row_start'     => '1',
+                        'row_end'       => '2',
+                    ),
+                    array(
+                        'column_start'  => '6',
+                        'column_end'    => '12',
+                        'row_start'     => '1',
+                        'row_end'       => '2',
+                    ),
+                ),
+            ),
+            array(
+                'num_rows'        => '2',
+                'num_items'       => 3,
+                'items'           => array(
+                    array(
+                        'column_start'  => '0',
+                        'column_end'    => '4',
+                        'row_start'     => '0',
+                        'row_end'       => '1',
+                    ),
+                    array(
+                        'column_start'  => '0',
+                        'column_end'    => '4',
+                        'row_start'     => '1',
+                        'row_end'       => '2',
+                    ),
+                    array(
+                        'column_start'  => '4',
+                        'column_end'    => '12',
+                        'row_start'     => '0',
+                        'row_end'       => '2',
+                    ),
+                ),
+            ),
+            array(
+                'num_rows'        => '1',
+                'num_items'       => 2,
+                'items'           => array(
+                    array(
+                        'column_start'  => '0',
+                        'column_end'    => '4',
+                        'row_start'     => '0',
+                        'row_end'       => '1',
+                    ),
+                    array(
+                        'column_start'  => '4',
+                        'column_end'    => '12',
+                        'row_start'     => '0',
+                        'row_end'       => '1',
+                    ),
+                ),
+            ),
+            array(
+                'num_rows'        => '2',
+                'num_items'       => 3,
+                'items'           => array(
+                    array(
+                        'column_start'  => '0',
+                        'column_end'    => '8',
+                        'row_start'     => '0',
+                        'row_end'       => '2',
+                    ),
+                    array(
+                        'column_start'  => '8',
+                        'column_end'    => '12',
+                        'row_start'     => '0',
+                        'row_end'       => '1',
+                    ),
+                    array(
+                        'column_start'  => '8',
+                        'column_end'    => '12',
+                        'row_start'     => '1',
+                        'row_end'       => '2',
+                    ),
+                ),
+            ),
+        );
+    } elseif ($gallery_layout === 'layout_three') {
+        $grid_sections = array(
+            array(
+                'num_rows'        => '2',
+                'num_items'       => 3,
+                'items'           => array(
+                    array(
+                        'column_start'  => '0',
+                        'column_end'    => '6',
+                        'row_start'     => '0',
+                        'row_end'       => '1',
+                    ),
+                    array(
+                        'column_start'  => '6',
+                        'column_end'    => '12',
+                        'row_start'     => '0',
+                        'row_end'       => '2',
+                    ),
+                    array(
+                        'column_start'  => '0',
+                        'column_end'    => '6',
+                        'row_start'     => '1',
+                        'row_end'       => '2',
+                    ),
+                ),
+            ),
+            array(
+                'num_rows'        => '2',
+                'num_items'       => 3,
+                'items'           => array(
+                    array(
+                        'column_start'  => '0',
+                        'column_end'    => '4',
+                        'row_start'     => '0',
+                        'row_end'       => '1',
+                    ),
+                    array(
+                        'column_start'  => '0',
+                        'column_end'    => '4',
+                        'row_start'     => '1',
+                        'row_end'       => '2',
+                    ),
+                    array(
+                        'column_start'  => '4',
+                        'column_end'    => '12',
+                        'row_start'     => '0',
+                        'row_end'       => '2',
+                    ),
+                ),
+            ),
+            array(
+                'num_rows'        => '1',
+                'num_items'       => 2,
+                'items'           => array(
+                    array(
+                        'column_start'  => '0',
+                        'column_end'    => '4',
+                        'row_start'     => '0',
+                        'row_end'       => '1',
+                    ),
+                    array(
+                        'column_start'  => '4',
+                        'column_end'    => '12',
+                        'row_start'     => '0',
+                        'row_end'       => '1',
+                    ),
+                ),
+            ),
+            array(
+                'num_rows'        => '2',
+                'num_items'       => 3,
+                'items'           => array(
+                    array(
+                        'column_start'  => '0',
+                        'column_end'    => '8',
+                        'row_start'     => '0',
+                        'row_end'       => '2',
+                    ),
+                    array(
+                        'column_start'  => '8',
+                        'column_end'    => '12',
+                        'row_start'     => '0',
+                        'row_end'       => '1',
+                    ),
+                    array(
+                        'column_start'  => '8',
+                        'column_end'    => '12',
+                        'row_start'     => '1',
+                        'row_end'       => '2',
+                    ),
+                ),
+            ),
+        );
+    }
 
-    // Count grid sections. Used to loop back to the first grid section if we reach the maximum number of grid sections.
+    if ($grid_sections !== '') {
+        // Count grid sections. Used to loop back to the first grid section if we reach the maximum number of grid sections.
     $grid_sections_count = count($grid_sections);
 
     // Count total number of gallery images
@@ -189,7 +379,8 @@ if ($gallery_images) {
 
     // Close gallery container
     $section_module .= '</div>';
+    }
 }
 
 // Now send the $section_module through to the page template
-include locate_template('/parts/templates/' . 'page-section.php'); ?>
+include locate_template('/parts/templates/' . 'page-section.php');

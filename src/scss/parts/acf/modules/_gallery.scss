@@ -131,7 +131,7 @@
   
         @for $i from 1 through 2 {
           &.grid-rows-#{$i} {
-            grid-template-rows: repeat($i, 350px);
+            grid-template-rows: repeat($i, 360px);
           }
         }
   
