@@ -7,7 +7,7 @@ window.onload = () => {
 	  behavior: 'smooth'
 	});
 	takeOverBrowserScroll()
-	setupNavEndpoints()
+	// setupNavEndpoints()
 }
 
 function setupNavEndpoints() {
@@ -25,7 +25,7 @@ function setupNavEndpoints() {
 					nextSection.classList.add('active')
 				}
 			}
-		} 
+		}
 	})
 }
 
@@ -44,45 +44,66 @@ function takeOverBrowserScroll() {
 			if (0 === i) __section.className += ' active'
 			__section.setAttribute('data-section-key', i)
 		}
-
-		setTimeout(() => {
-			body.style.paddingTop = `${window.innerHeight + (numberOfSections * buffer)}px`
-		}, 20)
 	}
 
 
 	let previousPos = 0;
+	let __scrolling = false;
 	window.onscroll = (e) => {
 		const newPos = window.scrollY
-
-		if ( newPos < previousPos ) {
-			// scrolling up
-			if ( newPos < (previousPos - buffer) ) {
-				// switch
-				switchSection(-1)
+		if (__scrolling) {
+			e.preventDefault();
+			setTimeout(() => {
+				__scrolling = false
 				previousPos = newPos
-			}
-		} else {
-			// scrolling down
-			if ( newPos > (previousPos + buffer) ) {
-				// switch
-				switchSection(1)
-				previousPos = newPos
-			}
+			}, 1000)
+			return false;
+		}
+		if ( newPos < (previousPos - buffer) ) {
+			// switch
+			switchSection(-1)
+			previousPos = newPos
+		}
+		// scrolling down
+		if ( newPos > (previousPos + buffer) ) {
+			// switch
+			switchSection(1)
+		previousPos = newPos
 		}
 	}
 
 	function switchSection(n) {
 		body.style.overflow = 'hidden'
 		n = n || 0
+		const activeSections = document.getElementsByClassName('active')
 		const currentSection = document.getElementsByClassName('active')[0]
 		const currentKey = +currentSection.getAttribute('data-section-key')
 		const newKey = (n + currentKey)
 		const nextSection = sections.item(newKey)
 		if (nextSection) {
-			currentSection.className = currentSection.className.substr(0, currentSection.className.indexOf(' active'))
-			nextSection.className += ' active'
+			currentSection.classList.remove('active')
+			nextSection.classList.add('active')
+			__scrolling = true;
+
+			window.scrollTo({
+			  top: nextSection.offsetTop,
+			  left: 0,
+			  behavior: 'smooth'
+			});
 		}
 		body.style.overflow = ''
+	}
+
+	function getActiveElement() {
+		const sections = document.getElementsByTagName('section')
+		let _section = null;
+		for (var i = 0; i < sections.length; i++) {
+			const __section = sections[i]
+			if (-1 !== __section.className.indexOf('active')) {
+				_section = __section
+				return _section
+			}
+		}
+
 	}
 }

@@ -1,7 +1,7 @@
 $gray-border: 0.2em solid $gray;
 
 .section {
-	position: fixed;
+	position: relative;
 	top: 0;
 	left: 0;
 	display: block;
@@ -11,7 +11,7 @@ $gray-border: 0.2em solid $gray;
 	background-color: $white;
 	z-index: -9;
 	transition: all 0.4s ease-in-out;
-	opacity: 0;
+	opacity: 1;
 
 	&.active {
 		z-index: 1;
