@@ -1,12 +1,17 @@
 // fix global styles
 .torque-slideshow-react-entry {
+	display: block;
+    height: 100%;
+    box-sizing: border-box;
 
 	.tq-items-list { display: none; }
 
 	.tq-slideshow.template_cannery_floorplans {
-		padding-bottom: 56%;
 		box-sizing: border-box;
-		height: 0;
+		// padding-bottom: 56%;
+		// height: 0;
+		padding-bottom: 0;
+		height: 100%;
 	}
 }
 
