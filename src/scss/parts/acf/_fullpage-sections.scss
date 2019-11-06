@@ -144,15 +144,15 @@ $ctaHeight: 4em;
 		display: block;
 		box-sizing: border-box;
 		text-align: center;
-		padding: 2em;
+		padding: 2em 1em;
 		border-bottom: $gray-border;
 
 		.torque-menu {
 			&-item-wrapper {
-				margin: 0 3.5em;
+				margin: 0 2em;
 
 				a {
-					font-size: 2em;
+					font-size: 1.6em;
 				}
 			}
 		}

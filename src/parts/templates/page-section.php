@@ -1,6 +1,6 @@
- <section class="section fullpage">
+<section class="section fullpage" id="<?php echo esc_attr( strtolower( str_replace( ' ', '-', $title ) ) ); ?>">
 
- 	<?php get_template_part( 'parts/shared/header' ); ?>
+	<?php get_template_part( 'parts/shared/header' ); ?>
 
 	<div class="section-inner">
 
