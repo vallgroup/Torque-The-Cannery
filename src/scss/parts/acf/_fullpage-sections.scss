@@ -56,8 +56,7 @@ $gray-border: 0.2em solid $gray;
 	text-align: center;
 
 	img {
-		width: 100%;
-		max-width: 40em !important;
+		max-width: 65% !important;
 	}
 }
 
@@ -71,6 +70,7 @@ $ctaHeight: 4em;
 	border-top: $gray-border;
 	// padding-left: 5.3em;
 	height: $contentMaxHeight;
+	overflow: hidden;
 
 	&-title {
 		position: relative;
@@ -104,20 +104,25 @@ $ctaHeight: 4em;
 		display: block;
 		box-sizing: border-box;
 		overflow: auto;
-		height: ($contentMaxHeight - $ctaHeight);
-		border-bottom: $gray-border;
-		padding: 3em 2em;
+		height: 100%;
+		padding: 3em 2em 6em;
 	}
 
 	&-cta {
+		border-top: $gray-border;
 		float: left;
-		position: relative;
+		position: absolute;
+		bottom: -1px;
+		left: 50px;
+		width: 100%;
 		display: block;
 		box-sizing: border-box;
 		height: $ctaHeight;
 		font-size: 1.2em;
 		font-weight: 600;
 		padding: 1.2em 2em 2em 2em;
+		background-color: $white;
+		z-index: 99;
 
 		.cta-arrow {
 			max-width: 35px;
