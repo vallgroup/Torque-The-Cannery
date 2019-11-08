@@ -65,6 +65,8 @@ add_filter( 'torque_slideshow_allow_post_slideshow', function( $n ) {
   return true;
 } );
 
+add_theme_support( 'title-tag' );
+
 /**
  * Admin settings
  */
@@ -86,7 +88,10 @@ add_filter( 'torque_slideshow_allow_post_slideshow', function( $n ) {
  }
  add_action( 'admin_menu', 'torque_remove_menus' );
 
-
+// function add_font() {
+//     echo '<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Cutive+Mono|Syncopate|Roboto&display=swap" rel="stylesheet">';
+// }
+// add_action('wp_head', 'add_font');
 
 
 /**
@@ -113,7 +118,7 @@ function torque_enqueue_child_styles() {
     );
 
     wp_enqueue_style( 'the-cannery-gf',
-        'https://fonts.googleapis.com/css?family=Montserrat:400,700|xCutive+Mono|Syncopate|Roboto&display=swap'
+        'https://fonts.googleapis.com/css?family=Montserrat:400,700|Cutive+Mono|Syncopate|Roboto&display=swap'
     );
 
 

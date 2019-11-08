@@ -3,6 +3,7 @@
 	top: 3em;
 	right: 7.8em;
 	text-align: right;
+	z-index: 9999;
 
 	.phone-number {
 		font-family: Roboto;
@@ -14,5 +15,6 @@
 	  letter-spacing: 0.86px;
 	  color: $orange;
 	  text-transform: uppercase;
+	  cursor: pointer;
 	}
 }
