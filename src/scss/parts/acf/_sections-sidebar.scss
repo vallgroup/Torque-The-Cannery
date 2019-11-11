@@ -18,9 +18,14 @@
 	box-sizing: border-box;
 	// padding-left: 5.3em;
 	overflow: hidden;
-	height: 45%;
 
-	@include respond-to(desktop) {
+	@include respond-to-max(tablet) {
+		max-height: 45%;
+		height: auto;
+		padding-bottom: 3em;
+	}
+
+	@include respond-to(tablet) {
 		border-top: $gray-border;
 		height: $contentMaxHeight;
 	}
@@ -67,8 +72,9 @@
 		overflow: auto;
 		padding: 1.5em 2em;
 
-		@include respond-to(tablet) {
-			height: 100%;
+		@include respond-to-max(tablet) {
+			border-left: $gray-border;
+			margin-left: 1em;
 		}
 	}
 
@@ -84,12 +90,16 @@
 		background-color: $white;
 		z-index: 99;
 
-			position: absolute;
-			bottom: -1px;
+		position: absolute;
+		bottom: -1px;
+
+		@include respond-to-max(tablet) {
+			left: 1em;
+		}
+
 		@include respond-to(tablet) {
 			float: left;
 			left: 50px;
-
 		}
 
 		.cta-arrow {

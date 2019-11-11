@@ -38,7 +38,7 @@ function fixSidebarContentHeight() {
 		const _logo = sidebar.querySelector('.section-sidebar-logo')
 		const _content = sidebar.querySelector('.section-sidebar-content')
 		// get the right height
-		const max = (+sidebar.offsetHeight - 100 /*account for 50px padding*/)
+		const max = (+sidebar.offsetHeight - 60 /*account for 50px padding*/)
 		const logo = (+_logo.offsetHeight + 30 /*account for margin bottom*/)
 		const contentHeight = (max - logo)
 		// set the right height

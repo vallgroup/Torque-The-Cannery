@@ -8,9 +8,14 @@
         width: 100%;
 
         .torque-map-container {
+            padding-top: 75%;
+            border: 5px solid #fff;
+            box-sizing: border-box;
+
+            @include respond-to(tablet) {
+                padding-top: 38%;
             border-bottom: 0.2em solid $gray;
-            // padding-top: 42.6%;
-            padding-top: 38%;
+            }
         }
     }
 
@@ -58,7 +63,7 @@
     .torque-map-pois-list {
         order: 3;
         display: grid;
-        grid-template-columns: repeat(2, minmax(200px, 480px));
+        grid-template-columns: repeat(1, minmax(200px, 480px));
         // justify-content: space-evenly;
         grid-column-gap: 30px;
         padding: 0 $paddingContentModules;
@@ -67,6 +72,10 @@
         margin-top: 20px;
         margin-bottom: $paddingContentModules;
 
+        @include respond-to(tablet) {
+            grid-template-columns: repeat(2, minmax(200px, 480px));
+
+        }
         .torque-map-pois-list-item {
             display: flex;
             margin: 2px 0 5px;
