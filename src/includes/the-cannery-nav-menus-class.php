@@ -6,7 +6,11 @@ class The_Cannery_Nav_Menus {
 
   private static $nav_menu_loaded = false;
 
+  private static $mobile_nav_menu_loaded = false;
+
   protected static $navigation = '';
+
+  protected static $mobile_navigation = '';
 
   public function __construct() {
     add_filter( Torque_Nav_Menus::$nav_menus_filter_handle, array( $this, 'modify_parent_nav_menus' ) );
@@ -33,6 +37,18 @@ class The_Cannery_Nav_Menus {
     }
 
     echo self::$navigation;
+  }
+
+  public static function show_mobile_nav() {
+
+    if ( ! self::$mobile_nav_menu_loaded ) {
+      ob_start();
+      get_template_part( 'parts/shared/header-parts/menu-items/menu-tree', 'stacked');
+      self::$mobile_navigation = ob_get_clean();
+      self::$mobile_nav_menu_loaded = true;
+    }
+
+    echo self::$mobile_navigation;
   }
 
 }

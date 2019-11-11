@@ -4,6 +4,23 @@
 
 	<div class="section-inner">
 
+		<div class="mobile-logo">
+			<?php get_template_part( 'parts/shared/logo', 'dark'); ?>
+		</div>
+
+		<!-- Content -->
+		<div class="section-content">
+			<div class="section-content-inner">
+				<div class="section-content-navigation">
+					<?php The_Cannery_Nav_Menus::show_nav_menu(); ?>
+				</div>
+			</div>
+			<div class="section-module">
+				<?php echo $section_module; ?>
+			</div>
+		</div>
+		<!-- /Content -->
+
 		<!-- sidebar -->
 		<div class="section-sidebar">
 			<div class="section-sidebar-logo">
@@ -30,19 +47,6 @@
 			</div>
 		</div>
 		<!-- /sidebar -->
-
-		<!-- Content -->
-		<div class="section-content">
-			<div class="section-content-inner">
-				<div class="section-content-navigation">
-					<?php The_Cannery_Nav_Menus::show_nav_menu(); ?>
-				</div>
-			</div>
-			<div class="section-module">
-				<?php echo $section_module; ?>
-			</div>
-		</div>
-		<!-- /Content -->
 	</div>
 
 </section>

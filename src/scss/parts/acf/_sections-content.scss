@@ -1,0 +1,39 @@
+.section-content {
+	overflow: hidden;
+
+	.section-content-inner {}
+
+	.section-module {
+		overflow-x: hidden;
+		overflow-y: auto;
+		// min-height: 50%;
+		height: auto;
+
+		@include respond-to(desktop) {
+			height: calc(100% - #{$navBarHeight});
+		}
+	}
+
+	&-navigation {
+		display: block;
+		box-sizing: border-box;
+		text-align: center;
+		padding: 2em 1em;
+		border-bottom: $gray-border;
+
+		display: none;
+		@include respond-to(desktop) {
+			display: block;
+		}
+
+		.torque-menu {
+			&-item-wrapper {
+				margin: 0 2em;
+
+				a {
+					font-size: 1.6em;
+				}
+			}
+		}
+	}
+}

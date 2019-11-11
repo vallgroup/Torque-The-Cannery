@@ -1,0 +1,101 @@
+.section-sidebar-logo {
+	margin-bottom: 3em;
+	text-align: center;
+
+	display: none;
+	@include respond-to(desktop) {
+		display: block;
+	}
+
+	img {
+		max-width: 65% !important;
+	}
+}
+
+.section-sidebar-content {
+	position: relative;
+	display: block;
+	box-sizing: border-box;
+	// padding-left: 5.3em;
+	overflow: hidden;
+	height: 45%;
+
+	@include respond-to(desktop) {
+		border-top: $gray-border;
+		height: $contentMaxHeight;
+	}
+
+	&-title {
+		position: relative;
+		display: block;
+		box-sizing: border-box;
+		border-bottom: $gray-border;
+		margin-top: 2em;
+
+		@include respond-to(tablet) {
+			margin-top: 0;
+			border-bottom: 0;
+			float: left;
+			width: 5em;
+			padding: 2em 1em 1em;
+			border-right: $gray-border;
+			height: 100%;
+			overflow: hidden;
+
+			&-vertical {
+				white-space: nowrap;
+				position: relative;
+				top: $contentMaxHeight;
+				left: 0;
+				transform: rotate(-90deg);
+				width: $contentMaxHeight;
+				transform-origin: left top;
+				text-align: right;
+
+				h2 {
+					font-size: 2.2em;
+				}
+			}
+		}
+
+	}
+
+	&-wysiwyg {
+		position: relative;
+		display: block;
+		box-sizing: border-box;
+		overflow: auto;
+		padding: 1.5em 2em;
+
+		@include respond-to(tablet) {
+			height: 100%;
+		}
+	}
+
+	&-cta {
+		border-top: $gray-border;
+		width: 100%;
+		display: block;
+		box-sizing: border-box;
+		height: $ctaHeight;
+		font-size: 1.2em;
+		font-weight: 600;
+		padding: 1.2em 2em 2em 2em;
+		background-color: $white;
+		z-index: 99;
+
+			position: absolute;
+			bottom: -1px;
+		@include respond-to(tablet) {
+			float: left;
+			left: 50px;
+
+		}
+
+		.cta-arrow {
+			max-width: 35px;
+			margin-left: 18px;
+			margin-bottom: -6px;
+		}
+	}
+}

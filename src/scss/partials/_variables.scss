@@ -6,6 +6,9 @@ $blue: #98c1d9;
 $gray: #4f5149;
 $black: #000000;
 $white: #ffffff;
+$opaque-orange: rgba(193, 80, 48, 0.95);
+
+$gray-border: 0.2em solid $gray;
 
 // padding
 $paddingContentModules: 5em;
@@ -14,5 +17,10 @@ $paddingContentModules: 5em;
 $navBarHeight: 66px;
 
 // breakpoints
-$MobileMaxWidth: 767px;
-$TabletMaxWidth: 1023px;
+$MobileMinWidth: 600px;
+$MobileMaxWidth: 800px;
+$TabletMaxWidth: 1199px;
+
+
+$contentMaxHeight: 32.5em;
+$ctaHeight: 4em;

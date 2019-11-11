@@ -1,165 +1,116 @@
-$gray-border: 0.2em solid $gray;
+@import 'sections-content';
+@import 'sections-sidebar';
+
+main {
+	padding-top: 2em;
+
+	@include respond-to(tablet) {
+		padding-top: 0;
+	}
+}
 
 .section {
 	position: relative;
-	top: 0;
-	left: 0;
 	display: block;
 	box-sizing: border-box;
-	height: 100vh;
+	height: auto;
 	width: 100%;
 	background-color: $white;
 	z-index: 9;
-	transition: all 0.4s ease-in-out;
-	opacity: 1;
+	padding: 7em 2em;
 
-	&.active {
-		z-index: 1;
-		opacity: 1;
+	@include respond-to(tablet) {
+		padding: 7em 5em;
 	}
 
-	padding: 8em 7.8em;
+	@include respond-to(desktop) {
+		padding: 8em 7.8em;
+		height: 100vh;
+	}
+
+	// &.active {}
 
 	&-inner {
 		position: relative;
 		display: block;
 		box-sizing: border-box;
-		height: 100%;
+		height: auto;
 		width: 100%;
 		border: $gray-border;
 		overflow: hidden;
+
+		@include respond-to(desktop) {
+			height: 100%;
+		}
 	}
 
 	&-sidebar {
 		// position: relative;
 		display: block;
 		box-sizing: border-box;
-		height: 100%;
-		width: 40%;
-		border-right: $gray-border;
+		height: auto;
 		padding: 2em 3.5em;
-		float: left;
+		width: 100%;
+		box-sizing: border-box;
+
+		@include respond-to(desktop) {
+			width: 40%;
+			height: 100%;
+			border-right: $gray-border;
+		}
 	}
 
 	&-content {
 		display: block;
 		box-sizing: border-box;
-		height: 100%;
-		width: 60%;
+		height: auto;
 		padding: 0;
 		overflow: auto;
+		width: 100%;
+		box-sizing: border-box;
+
+		@include respond-to(desktop) {
+			width: 60%;
+			float: right;
+			height: 100%;
+		}
 	}
 }
 
-.section-sidebar-logo {
-	margin-bottom: 3em;
+
+
+
+
+.mobile-logo {
+	display: none;
 	text-align: center;
+	border-bottom: $gray-border;
+	padding: 2em;
 
 	img {
-		max-width: 65% !important;
+		max-width: 40% !important;
 	}
 }
 
-$contentMaxHeight: 32.5em;
-$ctaHeight: 4em;
-
-.section-sidebar-content {
-	position: relative;
-	display: block;
-	box-sizing: border-box;
-	border-top: $gray-border;
-	// padding-left: 5.3em;
-	height: $contentMaxHeight;
-	overflow: hidden;
-
-	&-title {
-		position: relative;
-		display: block;
-		box-sizing: border-box;
-		float: left;
-		width: 5em;
-		padding: 2em 1em 1em;
-		border-right: $gray-border;
-		height: 100%;
-		overflow: hidden;
-
-		&-vertical {
-			white-space: nowrap;
-			position: relative;
-			top: $contentMaxHeight;
-			left: 0;
-			transform: rotate(-90deg);
-			width: $contentMaxHeight;
-			transform-origin: left top;
-			text-align: right;
-
-			h2 {
-				font-size: 2.2em;
-			}
-		}
-	}
-
-	&-wysiwyg {
-		position: relative;
-		display: block;
-		box-sizing: border-box;
-		overflow: auto;
-		height: 100%;
-		padding: 1.5em 2em;
-	}
-
-	&-cta {
-		border-top: $gray-border;
-		float: left;
-		position: absolute;
-		bottom: -1px;
-		left: 50px;
-		width: 100%;
-		display: block;
-		box-sizing: border-box;
-		height: $ctaHeight;
-		font-size: 1.2em;
-		font-weight: 600;
-		padding: 1.2em 2em 2em 2em;
-		background-color: $white;
-		z-index: 99;
-
-		.cta-arrow {
-			max-width: 35px;
-			margin-left: 18px;
-			margin-bottom: -6px;
+.section:first-child {
+	@include respond-to-max(desktop) {
+	&	.mobile-logo {
+			display: block;
 		}
 	}
 }
 
-.section-content {
-	overflow: hidden;
-
-	.section-content-inner {
-
+.section-module .torque-slideshow-react-entry .tq-slideshow.template_cannery_floorplans {
+	height: 60% !important;
+	@include respond-to(tablet) {
+		height: 90% !important;
 	}
-
-	.section-module {
-		overflow-x: hidden;
-		overflow-y: auto;
-		height: calc(100% - #{$navBarHeight});
+	@include respond-to(desktop) {
+		height: 100% !important;
 	}
-
-	&-navigation {
-		display: block;
-		box-sizing: border-box;
-		text-align: center;
-		padding: 2em 1em;
-		border-bottom: $gray-border;
-
-		.torque-menu {
-			&-item-wrapper {
-				margin: 0 2em;
-
-				a {
-					font-size: 1.6em;
-				}
-			}
-		}
+}
+.torque-slideshow-react-entry {
+	@include respond-to-max(desktop) {
+		height: auto !important;
 	}
 }

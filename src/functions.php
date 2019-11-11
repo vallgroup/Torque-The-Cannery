@@ -88,10 +88,10 @@ add_theme_support( 'title-tag' );
  }
  add_action( 'admin_menu', 'torque_remove_menus' );
 
-// function add_font() {
-//     echo '<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Cutive+Mono|Syncopate|Roboto&display=swap" rel="stylesheet">';
-// }
-// add_action('wp_head', 'add_font');
+function add_viewport() {
+    echo '<meta name="viewport" content="width=device-width, initial-scale=1.0"/>';
+}
+add_action('wp_head', 'add_viewport');
 
 
 /**

@@ -14,15 +14,17 @@ function init() {
 	//
 	body = document.querySelector('body')
 	sections = document.querySelectorAll('.section')
-	// Makes sure the sidebar content is
-	// always side bar height - logo height
-	fixSidebarContentHeight()
 	// add active class to the inital section
 	// and data-section-keye to all of them
 	setInitialActiveSection()
-	// bind the scrolling functionality
-	if (768 < window.innerWidth) {
+	if (1199 < window.innerWidth) {
+		// bind the scrolling functionality
 		takeOverBrowserScroll()
+		// Makes sure the sidebar content is
+		// always side bar height - logo height
+		fixSidebarContentHeight()
+	} else {
+		bindMobileMenu()
 	}
 	// bind the navigation scroll
 	bindNavigation()
@@ -133,7 +135,7 @@ function scrollToNextSection(nextSection) {
 // clicks on any anchor tag, with a hashtag
 function bindNavigation() {
 	// get all anchor tags inside sections
-	const navItems = document.querySelectorAll('.section a')
+	const navItems = document.querySelectorAll('.section a, .mobile-header-navigation-nav a')
 	// iterate through and check for hashtags
 	navItems.forEach(navItem => {
 		if (navItem.href
@@ -145,7 +147,7 @@ function bindNavigation() {
 			// when this anchor is clicked on
 			const handleNavClick = (e) => {
 				e.preventDefault()
-				e.stopPropagation()
+				// e.stopPropagation()
 				const currentSection = document.querySelector('.section.fullpage.active')
 				const nextSection = document.querySelector('#'+navLink)
 				// scroll
@@ -155,4 +157,43 @@ function bindNavigation() {
 			navItem.onclick = handleNavClick
 		}
 	})
+}
+
+function bindMobileMenu() {
+	// const navigation = document.querySelector('.mobile-header-navigation')
+	const toggle = document.querySelector('.mobile-header-navigation-toggle a')
+	const toggleImg = document.querySelector('.mobile-header-navigation-toggle img')
+	const nav = document.querySelector('.mobile-header-navigation-nav')
+	let active = false;
+
+	const openNav = () => {
+		const currentSrc = toggleImg.src.split('/').reverse()
+		nav.classList.add('active')
+
+		currentSrc[0] = 'close.png'
+		toggleImg.src = currentSrc.reverse().join('/')
+		active = true
+	}
+
+	const closeNav = () => {
+		const currentSrc = toggleImg.src.split('/').reverse()
+		nav.classList.remove('active')
+
+		currentSrc[0] = 'hamburger.png'
+		toggleImg.src = currentSrc.reverse().join('/')
+		active = false
+	}
+
+	toggle.onclick = e => {
+		e.preventDefault();
+		if (active) {
+			closeNav()
+		} else {
+			openNav()
+		}
+	}
+
+	nav.onclick = e => {
+		closeNav()
+	}
 }

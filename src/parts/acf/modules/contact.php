@@ -11,79 +11,72 @@ $address_1      = get_sub_field( 'address_1' );
 $address_2      = get_sub_field( 'address_2' );
 // $social_icons   = get_sub_field( 'social_icons' );
 
-$section_module = '';
+ob_start(); ?>
+<div class="contact">
+  <?php if ($top_img) : ?>
+    <div class="contact-banner-container">
+        <div class="contact-banner" style="background-image: url(<?php echo esc_url($top_img); ?>)"></div>
+    </div>
+  <?php endif; ?>
 
-// Image banner
-if ($top_img) {
-    $section_module .= '<div class="contact-banner-container">
-        <div class="contact-banner" style="background-image: url(' . $top_img . ')"></div>
-    </div>';
-}
+  <div class="contact-name-container">
+    <?php if ($name) { ?>
+      <h2 class="contact-name"><?php echo esc_html($name); ?></h2>
+    <?php } ?>
+  </div>
 
-// Name container
-$section_module .= '<div class="contact-name-container">';
-if ($name) {
-    $section_module .= '<h2 class="contact-name">' . $name . '</h2>';
-}
-$section_module .= '</div>';
+  <div class="contact-content-container">
 
-// Open content container
-$section_module .= '<div class="contact-content-container">';
-
-    // Contact info container
-    $section_module .= '<div class="contact-info-container">';
-    if ( have_rows('contact_info') ):
-        while ( have_rows('contact_info') ): the_row();
+      <div class="contact-info-container">
+        <?php if ( have_rows('contact_info') ) :
+          while ( have_rows('contact_info') ): the_row();
             $type = get_sub_field( 'type' );
             $text = get_sub_field( 'text' );
-            $link = get_sub_field( 'link' );
-            $section_module .= '<div class="contact-info-item">';
-                $section_module .= '<img class="contact-info-icon icon-' . $type . '" src="/wp-content/themes/the-cannery/statics/images/' . $type . '-icon.png" alt="' . $type . '"/><a href="' . $link . '" class="contact-info-text">' . $text . '</a>';
-            $section_module .= '</div>';
-        endwhile;
-    endif;
-    $section_module .= '</div>';
+            $link = get_sub_field( 'link' ); ?>
+            <div class="contact-info-item">
+              <img class="contact-info-icon icon-<?php echo esc_attr( $type ); ?>" src="/wp-content/themes/the-cannery/statics/images/<?php echo esc_attr( $type ); ?>-icon.png" alt="<?php echo esc_attr( $type ); ?>" />
+              <a href="<?php echo esc_html( $link ); ?>" class="contact-info-text"><?php echo esc_html( $text ); ?></a>
+            </div>
+          <?php endwhile;
+        endif; ?>
+      </div>
 
-    // Contact info container
-    $section_module .= '<div class="contact-logo-container">';
-    if ($logo) {
-        $section_module .= '<img class="contact-logo" src="' . $logo . '" alt="logo"/>';
-    }
-    $section_module .= '</div>';
+      <div class="contact-logo-container">
+        <?php if ($logo) { ?>
+          <img class="contact-logo" src="<?php echo esc_url( $logo ); ?>" alt="logo"/>
+        <?php } ?>
+      </div>
 
-// Close content container
-$section_module .= '</div>';
+  </div>
 
+  <div class="contact-content-container address">
 
-// Open second content container
-$section_module .= '<div class="contact-content-container">';
+      <div class="contact-address-container">
+      <?php if ($address_1) { ?>
+          <span class="contact-address-one"><?php echo esc_html( $address_1 ); ?></span>
+      <?php } ?>
+      <?php if ($address_2) { ?>
+          <span class="contact-address-two"><?php echo esc_html( $address_2 ); ?></span>
+      <?php } ?>
+      </div>
 
-    // Address container
-    $section_module .= '<div class="contact-address-container">';
-    if ($address_1) {
-        $section_module .= '<span class="contact-address-one">' . $address_1 . '</span>';
-    }
-    if ($address_2) {
-        $section_module .= '<span class="contact-address-two">' . $address_2 . '</span>';
-    }
-    $section_module .= '</div>';
+      <div class="contact-social-container">
+      <?php if ( have_rows('social_icons') ):
+          while ( have_rows('social_icons') ): the_row();
+              $icon = get_sub_field( 'icon' );
+              $link = get_sub_field( 'link' ); ?>
+              <a class="contact-social-icon" href="<?php echo esc_url($link); ?>" target="_blank">
+                  <img src="<?php echo esc_url($icon); ?>" alt="<?php echo esc_url($link); ?>"/>
+              </a>
+          <?php endwhile;
+      endif; ?>
+      </div>
 
-    // Social icons container
-    $section_module .= '<div class="contact-social-container">';
-    if ( have_rows('social_icons') ):
-        while ( have_rows('social_icons') ): the_row();
-            $icon = get_sub_field( 'icon' );
-            $link = get_sub_field( 'link' );
-            $section_module .= '<a class="contact-social-icon" href="' . $link . '" target="_blank">';
-                $section_module .= '<img src="' . $icon . '" alt="' . $link . '"/>';
-            $section_module .= '</a>';
-        endwhile;
-    endif;
-    $section_module .= '</div>';
+  </div>
+</div>
+<?php
 
-// Close second content container
-$section_module .= '</div>';
-
+$section_module = ob_get_clean();
 // Send section data through to page template
 include locate_template( '/parts/templates/' . 'page-section.php' );
 ?>

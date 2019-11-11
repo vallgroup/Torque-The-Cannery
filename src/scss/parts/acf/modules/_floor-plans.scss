@@ -19,7 +19,11 @@
 .tq-slideshow {
 
 	.post-slide {
-		padding: 5em 10em;
+		padding: 2em;
+
+		@include respond-to(tablet) {
+			padding: 5em 10em;
+		}
 
 		h1 {
 			margin-bottom: 10px;
