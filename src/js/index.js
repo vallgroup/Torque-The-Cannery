@@ -48,12 +48,22 @@ function fixSidebarContentHeight() {
 // assign active class and data-section-key to sections
 function setInitialActiveSection() {
 	const numberOfSections = sections.length || 0
+	console.log(window.location.hash)
+
+	if ('' !== window.location.hash) {
+		const _firstActiveSection = document.querySelector(window.location.hash)
+		_firstActiveSection.classList.add('active')
+		previousPos = window.scrollY
+	} else {
+		sections[0].classList.add('active')
+	}
+
 	if (0 < numberOfSections) {
 		for (var i = 0; i < numberOfSections; i++) {
 			const __section = sections[i]
-			if (0 === i) {
-				__section.classList.add('active')
-			}
+			// if (0 === i) {
+			// 	__section.classList.add('active')
+			// }
 			__section.setAttribute('data-section-key', i)
 		}
 	}
@@ -129,6 +139,7 @@ function scrollToNextSection(nextSection) {
 		__scrolling = false
 		// set new scrolling position
 		previousPos = window.scrollY
+		window.location.hash = '#' + nextSection.id
 	}, 1000)
 }
 // scroll to corresponding section when user

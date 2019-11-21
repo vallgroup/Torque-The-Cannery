@@ -40,7 +40,8 @@
 					<?php if ( ! empty( $cta['title'] )
 						&& ! empty( $cta['url'] ) ) : ?>
 						<a href="<?php echo esc_url( $cta['url'] ); ?>">
-							<?php echo esc_html( $cta['title'] ); ?><img class="cta-arrow" src="/wp-content/themes/the-cannery/statics/images/right-arrow.png" width="90px" height="auto" alt="right arrow"/>
+							<?php echo esc_html( $cta['title'] ); ?>
+							<!-- <img class="cta-arrow" src="/wp-content/themes/the-cannery/statics/images/right-arrow.png" width="90px" height="auto" alt="right arrow"/> -->
 						</a>
 					<?php endif; ?>
 				</div>

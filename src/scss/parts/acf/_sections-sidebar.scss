@@ -16,13 +16,12 @@
 	position: relative;
 	display: block;
 	box-sizing: border-box;
-	// padding-left: 5.3em;
 	overflow: hidden;
 
 	@include respond-to-max(tablet) {
-		max-height: 45%;
 		height: auto;
-		padding-bottom: 3em;
+		height: auto;
+		padding-bottom: 0;
 	}
 
 	@include respond-to(tablet) {
@@ -36,6 +35,12 @@
 		box-sizing: border-box;
 		border-bottom: $gray-border;
 		margin-top: 2em;
+
+		h2 {
+			font-weight: 100;
+			font-size: 2.2em;
+			margin-bottom: 0.5em;
+		}
 
 		@include respond-to(tablet) {
 			margin-top: 0;
@@ -59,6 +64,7 @@
 
 				h2 {
 					font-size: 2.2em;
+					margin-bottom: 0;
 				}
 			}
 		}
@@ -70,11 +76,29 @@
 		display: block;
 		box-sizing: border-box;
 		overflow: auto;
-		padding: 1.5em 2em;
+		padding: 1.5em 1.3em 6em 1.3em;
+
+		h1 {
+			font-size: 2.5em;
+		}
+
+		a {
+			text-decoration: none;
+			padding-right: 61px;
+			background-image: url('/wp-content/themes/the-cannery/statics/images/right-arrow.png');
+			background-size: 35px auto;
+			background-repeat: no-repeat;
+			background-position: right center;
+			font-weight: 400;
+		}
 
 		@include respond-to-max(tablet) {
 			border-left: $gray-border;
 			margin-left: 1em;
+		}
+
+		@include respond-to(tablet) {
+			height: 100%;
 		}
 	}
 
@@ -92,6 +116,18 @@
 
 		position: absolute;
 		bottom: -1px;
+
+		a {
+			font-size: 135%;
+			//
+			text-decoration: none;
+			padding-right: 61px;
+			background-image: url('/wp-content/themes/the-cannery/statics/images/right-arrow.png');
+			background-size: 35px auto;
+			background-repeat: no-repeat;
+			background-position: right center;
+			font-weight: 400;
+		}
 
 		@include respond-to-max(tablet) {
 			left: 1em;

@@ -1,5 +1,25 @@
 .contact {
-  padding: 2em;
+  padding: 1.3em;
+
+  @include respond-to(tablet) {
+    padding: 2em;
+  }
+
+  &-name-container {
+    h2 {
+      font-weight: 100;
+      font-size: 2.2em;
+      margin-bottom: 0.5em;
+      color: $gray;
+    }
+
+    @include respond-to(tablet) {
+      h2 {
+        font-size: 2.2em;
+        margin-bottom: 0;
+      }
+    }
+  }
 
   &-content-container {
     border-top: $gray-border;
@@ -80,7 +100,7 @@
     }
 
     @include respond-to-max(tablet) {
-      margin-left: 3em;
+      margin-left: 1.1em;
       border-left: $gray-border;
     }
   }
@@ -107,8 +127,10 @@
   }
 
   &-info-container {
+    padding: 1em 0;
 
     @include respond-to(tablet) {
+      padding: 0;
       width: 60%;
       border-right: $gray-border;
     }
@@ -117,18 +139,20 @@
     .contact-info-text {
       display: inline-block;
       vertical-align: middle;
-      margin-top: 1em;
-      margin-bottom: 1em;
+      margin-top: 0.3em;
+      margin-bottom: 0.3em;
 
       @include respond-to(tablet) {
+        margin-top: 1em;
+        margin-bottom: 1em;
         margin-top: 1.5em;
         margin-bottom: 1.5em;
       }
     }
 
     .contact-info-icon {
-      width: 2em;
-      height: 2em;
+      max-width: 2em;
+      height: auto;
       margin-right: 2.5em;
       margin-left: 2em;
     }
@@ -136,13 +160,18 @@
     .contact-info-text {
       font-size: 16px;
       color: $gray;
-      font-family: 'Cutive Mono'
+      font-family: 'Cutive Mono';
+      word-break: break-all;
+
+      @include respond-to-max(mobile) {
+        width: 53vw;
+      }
     }
   }
 
   .contact-banner-container {
       height: 40%;
-      margin: 10px 10px 25px 10px;
+      margin: 0 0 25px;
 
       .contact-banner {
           height: 100%;

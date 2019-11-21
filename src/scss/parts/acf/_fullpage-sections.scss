@@ -17,10 +17,10 @@ main {
 	width: 100%;
 	background-color: $white;
 	z-index: 9;
-	padding: 7em 2em;
+	padding: 7em 1.6em;
 
 	@include respond-to(tablet) {
-		padding: 7em 5em;
+		padding: 7em 4em;
 	}
 
 	@include respond-to(desktop) {
@@ -49,11 +49,12 @@ main {
 		display: block;
 		box-sizing: border-box;
 		height: auto;
-		padding: 2em 3.5em;
+		padding: 2em 1.3em;
 		width: 100%;
 		box-sizing: border-box;
 
 		@include respond-to(desktop) {
+			padding: 2em 3.5em;
 			width: 40%;
 			height: 100%;
 			border-right: $gray-border;
@@ -85,10 +86,14 @@ main {
 	display: none;
 	text-align: center;
 	border-bottom: $gray-border;
-	padding: 2em;
+	padding: 1em;
 
 	img {
-		max-width: 40% !important;
+		max-width: 70% !important;
+
+		@include respond-to(tablet) {
+			max-width: 50% !important;
+		}
 	}
 }
 
