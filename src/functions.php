@@ -46,6 +46,10 @@ add_filter( 'torque_map_pois_allowed', function( $n ) {
   return 4;
 } );
 
+// add_filter( 'torque_map_manual_pois', function( $n ) {
+//   return true;
+// } );
+
 add_filter( 'torque_map_pois_location', function( $n ) {
   return 'bottom';
 } );
