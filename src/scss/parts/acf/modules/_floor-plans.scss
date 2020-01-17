@@ -37,7 +37,18 @@
 		}
 
 		.slideshow-floor-plan {
-			margin-top: 18px;
+			margin: 0 auto;
+			position: absolute;
+			top: 20%;
+			height: calc(80% - 80px);
+			left: 0;
+			right: 0;
+			text-align: center;
+
+			& > img {
+				width: auto;
+				height: 100%;
+			}
 		}
 	}
 
